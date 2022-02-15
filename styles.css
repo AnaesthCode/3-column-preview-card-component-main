@@ -1,0 +1,227 @@
+/* Reset Code */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End Reset Code */
+
+:root {
+    /* ### Primary */
+
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%); 
+
+    /* ### Neutral */
+
+    --transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --background-headings-buttons: hsl(0, 0%, 95%);
+}
+
+/* font-weight 400 */
+@import url("https://fonts.google.com/specimen/Lexend+Deca");
+/* font-weight 700 */
+@import url("https://fonts.google.com/specimen/Big+Shoulders+Display");
+
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif; 
+    background-color: var(--background-headings-buttons);
+    min-height: 90vh;  
+}
+
+h2 {
+    color: var(--background-headings-buttons);
+    text-transform: uppercase;
+    font-family: "Big Shoulders Display";
+    font-size: 2.5rem;
+    grid-column: 3 / span 10;
+    grid-row: 3;
+    font-weight: 700;
+}
+
+p {
+    color: var(--transparent-white-paragraphs);
+    opacity: 0.75;
+    grid-column: 3 / span 8;
+    grid-row: 4;
+    line-height: 1.5;
+    
+}
+
+svg {
+    grid-column: 3 / span 2;
+    grid-row: 1 / 3;
+    margin-top: 3.5rem;
+    
+}
+
+button {
+    grid-column: 3 / span 5;
+    grid-row: 6 / span 7;
+    height: 40%;
+    border-radius: 27px;
+    margin-top: 25px;
+    font-family: "Lexend Deca", sans-serif;
+    background-color: var(--background-headings-buttons);
+    border: 2px solid var(--background-headings-buttons);
+    font-size: 1rem;
+    transition: background-color 200ms ease-in;
+    
+
+}
+
+.main-div {
+    width: 100%;
+    min-height: 80vh;
+    padding: 4rem 0;
+    background-color: var(--background-headings-buttons);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card-container {
+    width: 90%;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sedan-card, .suv-card, .lux-card {
+    height: 440px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(7, minmax(40px, 1fr));
+}
+
+.sedan-card {
+    background-color: var(--bright-orange);
+    border-radius: 10px 10px 0 0;
+    
+    
+}
+
+.sedan-card > button {
+    color: var(--bright-orange);
+}
+
+.suv-card {
+    background-color: var(--dark-cyan);
+    
+}
+
+.suv-card > button {
+    color: var(--dark-cyan);
+}
+
+.lux-card {
+    background-color: var(--very-dark-cyan);
+    border-radius: 0 0 10px 10px;
+    
+
+}
+
+.lux-card > button {
+    color: var(--very-dark-cyan);
+}
+
+button:hover {
+    background-color: transparent;
+    color: var(--background-headings-buttons);
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: var(--dark-cyan);
+}
+
+@media (min-width: 1024px) {
+    .card-container {
+        flex-direction: row;
+        min-width: 1024px;
+
+    }
+    .sedan-card, .suv-card, .lux-card {
+        height: 500px;
+    }
+
+    .sedan-card {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .lux-card {
+        border-radius: 0 10px 10px 0;
+    }
+
+    h2 {
+        grid-row: 2 / 3;
+        margin-top: 3.5rem;
+    }
+
+    p {
+        grid-row: 3;
+        margin-top: 3rem;
+        padding-right: 1rem;
+    }
+
+    button {
+        height: 35%;
+    }
+}
